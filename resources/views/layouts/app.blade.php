@@ -13,11 +13,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     {{-- Styles --}}
-    <link href="{{ asset('theme-v1/layouts/vertical-light-menu/css/light/loader.css') }}" rel="stylesheet"
-        type="text/css" />
-    <link href="{{ asset('theme-v1/layouts/vertical-light-menu/css/dark/loader.css') }}" rel="stylesheet"
-        type="text/css" />
-    <script src="{{ asset('theme-v1/layouts/vertical-light-menu/loader.js') }}"></script>
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
@@ -26,33 +21,17 @@
         type="text/css" />
     <link href="{{ asset('theme-v1/layouts/vertical-light-menu/css/dark/plugins.css') }}" rel="stylesheet"
         type="text/css" />
-
-
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('theme-v1/assets/src/assets/css/light/elements/alert.css') }}">
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('theme-v1/assets/src/assets/css/dark/elements/alert.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('theme-v1/src/assets/css/light/scrollspyNav.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('theme-v1/src/assets/css/dark/scrollspyNav.css') }}">
-
+    @yield('requiredStyle')
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
 
 </head>
 
 <body class="layout-boxed" layout="full-width" page="starter-pack">
 
-    <!-- BEGIN LOADER -->
-    <div id="load_screen">
-        <div class="loader">
-            <div class="loader-content">
-                <div class="spinner-grow align-self-center"></div>
-            </div>
-        </div>
-    </div>
-    <!--  END LOADER -->
+
 
     @guest
         @includeIf('auth.login')
@@ -69,14 +48,20 @@
 
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="{{ asset('theme-v1/src/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('theme-v1/layouts/vertical-light-menu/app.js') }}"></script>
     <script src="{{ asset('theme-v1/src/plugins/src/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('theme-v1/src/plugins/src/mousetrap/mousetrap.min.js') }}"></script>
-    <script src="{{ asset('theme-v1/layouts/vertical-light-menu/app.js') }}"></script>
+    {{-- <script src="{{ asset('theme-v1/src/plugins/src/highlight/highlight.pack.js') }}"></script> --}}
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+    @yield('requiredScripts')
 
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
+
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+
+    <!--  END CUSTOM SCRIPTS FILE  -->
 </body>
 
 </html>

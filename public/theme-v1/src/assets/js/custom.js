@@ -41,3 +41,15 @@ function multiCheck(tb_var) {
         $(this).parents("tr").toggleClass("active")
     })
 }
+
+/*
+=========================================
+|                                       |
+|              SearchBox                |
+|                                       |
+=========================================
+*/
+
+/*
+    This SearchBox Function is recommanded for table CRM
+*/

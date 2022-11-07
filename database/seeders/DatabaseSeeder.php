@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\CRMCalendar;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +22,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        CRMCalendar::create([
+            'title' => 'Event 2',
+            'start' => '2022-09-22',
+            'end' => '2022-09-24',
+            'description' => 'Event 2'
+        ]);
     }
 }

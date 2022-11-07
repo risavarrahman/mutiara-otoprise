@@ -53,7 +53,8 @@
                 {{-- CRM --}}
                 <li
                     class="menu @if ($title == 'Customer') active
-							@elseif ($title == 'Vendor') active @endif">
+							@elseif ($title == 'Vendor') active 
+                            @elseif ($title == 'Calendar') active @endif">
                     <a href="#crm" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <div class="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -75,13 +76,17 @@
                         </div>
                     </a>
                     <ul class="collapse submenu list-unstyled
-									@if ($title == 'Customer') @elseif ($title == 'Vendor') @endif"
+									@if ($title == 'Customer') @elseif ($title == 'Vendor') 
+                                    @elseif ($title == 'Calendar') @endif"
                         id="crm" data-bs-parent="#accordionExample">
                         <li class="@if ($title == 'Customer') active @endif">
                             <a href="/admin/customer"> Customer </a>
                         </li>
                         <li class="@if ($title == 'Vendor') active @endif">
                             <a href="/admin/vendor"> Vendor </a>
+                        </li>
+                        <li class="@if ($title == 'Calendar') active @endif">
+                            <a href="/admin/calendar"> Calendar </a>
                         </li>
                     </ul>
                 </li>
